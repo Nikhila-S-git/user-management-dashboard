@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+User Management Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Overview
 
-## Available Scripts
+A simple User Management Dashboard built with React.js.
+Allows viewing, adding, editing, and deleting users.
+Fetches user data from JSONPlaceholder API.
+Supports search, sorting, and pagination.
+Fully styled using inline styles, no CSS files required.
 
-In the project directory, you can run:
+Features
 
-### `npm start`
+View Users: Display users in a responsive table.
+Add User: Fill a form to add a new user.
+Edit User: Update existing user details.
+Delete User: Remove a user from the list.
+Search & Filter: Search by first name, last name, email, or department.
+Sorting: Click table headers to sort by any column.
+Pagination: Choose rows per page and navigate between pages.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Clone the repository
 
-### `npm test`
+git clone <repository_url>
+cd <project_folder>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Install dependencies
+npm install
+Start the application
+npm start
+Opens in default browser at http://localhost:3000/.
 
-### `npm run build`
+Assumptions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Department: Not available in JSONPlaceholder → defaults to "General".
+Persistence: Changes via POST, PUT, DELETE are simulated; JSONPlaceholder does not persist data.
+Pagination, search, and sorting are implemented on the client-side.
+Styling: Inline styles are used for simplicity and compatibility.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Dependencies
+React.js
+Fetch API (native)
+No additional styling libraries or state management libraries are required.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Usage
+Add User: Click “Add User” → fill form → submit
+Edit User: Click “Edit” button next to a user → modify → submit
+Delete User: Click “Delete” button next to a user
+Sort: Click column headers
+Search: Type in the search box
+Pagination: Select rows per page and navigate with Prev/Next
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Styling Approach and Challenges
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Initially, CSS Modules were used for styling (`UserForm.module.css`, `UserTable.module.css`, `App.module.css`). 
+However, during development, the project faced issues with CSS not being applied consistently due to module resolution problems in the React setup.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To ensure reliable styling and simplify the setup, all components were converted to inline styles. 
+This approach guarantees that the dashboard looks consistent across all components without relying on external CSS files.
